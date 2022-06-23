@@ -47,7 +47,7 @@ class ProductManagerTest {
         manager.add(fourth);
         manager.add(fifth);
 
-        Assertions.assertArrayEquals(new Product[]{third}, manager.searchBy("Английский"));
+        assertArrayEquals(new Product[]{third}, manager.searchBy("Английский"));
     }
 
     /*@Test
