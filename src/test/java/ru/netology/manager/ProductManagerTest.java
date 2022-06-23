@@ -2,6 +2,7 @@ package ru.netology.manager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
@@ -36,6 +37,17 @@ class ProductManagerTest {
     public void searchByNotFullNameBook() {
         manager.add(first);
         assertArrayEquals(new Product[]{first}, manager.searchBy("Истор"));
+    }
+
+    @Test
+    public void addAllItemsAndFindBook() {
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+        manager.add(fourth);
+        manager.add(fifth);
+
+        Assertions.assertArrayEquals(new Product[]{third}, manager.searchBy("Английский"));
     }
 
     /*@Test
@@ -77,5 +89,30 @@ class ProductManagerTest {
     public void searchForNothing() {
         assertArrayEquals(new Product[]{}, manager.searchBy(null));
     }
+
+    @Test
+    public void shouldSearchAuthorTwo() {
+        manager.add(first);
+        manager.add(second);
+
+        assertArrayEquals(new Product[]{first, second}, manager.searchBy("Антонов"));
+    }
+
+    @Test
+    public void shouldSearchProducer() {
+        manager.add(fourth);
+        manager.add(fifth);
+
+        assertArrayEquals(new Product[]{fourth}, manager.searchBy("Китай"));
+    }
+
+    @Test
+    public void shouldSearchProducerOne() {
+        manager.add(fourth);
+        manager.add(fifth);
+
+        assertArrayEquals(new Product[]{fourth}, manager.searchBy("Китай"));
+    }
+
 }
 

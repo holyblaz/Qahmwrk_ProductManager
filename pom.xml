@@ -61,10 +61,6 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>PACKAGE</element>
-                                    <excludes>
-                                        <exclude>ru.netology.domain</exclude>
-                                    </excludes>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>
