@@ -20,4 +20,15 @@ public class Smartphone extends Product {
     public void setProducer(String producer) {
         this.producer = producer;
     }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (producer.contains(search)) {
+            return true;
+        }
+        return false;
+    }
 }

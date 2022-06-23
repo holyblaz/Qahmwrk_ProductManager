@@ -28,21 +28,4 @@ public class ProductManager {
         }
         return result;
     }
-
-    /* public boolean matches(Product product, String search) {
-         if (product instanceof Book) {
-             Book book = (Book) product;
-             if (book.getName().contains(search) || book.getAuthor().contains(search))
-                 return true;
-         }
-         if (product instanceof Smartphone) {
-             Smartphone smartphone = (Smartphone) product;
-             if (smartphone.getName().contains(search) || smartphone.getProducer().contains(search)) ;
-             return true;
-         }
-         return false;
-     }*/
-    public boolean matches(Product product, String search) {
-        return product.getName().contains(search);
-    }
 }
